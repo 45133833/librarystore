@@ -1,0 +1,25 @@
+{% extends 'book/library.html' %}
+{% block content %}
+<center>
+
+    <form method="POST" enctype="multipart/form-date">
+        {% csrf_token %}
+        <table class="w-50 table table-light" style="border-radius:10px;">
+            {% for field in upload_form %}
+            <tr >
+                <th>{{ field.labal }} </th>
+                <th>{{ field }}</th>
+
+            </tr>
+            {% endfor %}
+        </table>
+        <a class="btn btn-primary btn-lg md-5" href="{% url 'upload-book' %}" role="button">Upload</a>
+        <button class="btn btn-primar btn-lg md-5" href="{% url 'upload-book' %}" role="button">Upload</a>
+        
+    </form>
+
+
+
+</center>
+
+{% endblock %}
